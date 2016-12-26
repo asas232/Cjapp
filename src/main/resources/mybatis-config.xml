@@ -5,7 +5,8 @@
 
     <!-- 实体类,简称 -设置别名 -->
     <typeAliases>
-        <typeAlias alias="User" type="com.cjapp.entity.User" />
+        <!--<typeAlias alias="User" type="com.cjapp.entity.User" />-->
+        <package name="com.cjapp.entity"></package>
     </typeAliases>
     <!-- 实体接口映射资源 -->
     <!--

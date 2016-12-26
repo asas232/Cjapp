@@ -7,13 +7,22 @@
 
  -->
 <mapper namespace="com.cjapp.dao.IUserDao">
+  <resultMap id="user_map" type="User">
+      <id column="userid" property="userid"></id>
+      <result column="username" property="username"></result>
+      <result column="age" property="age"></result>
 
+  </resultMap>
     <insert id="save" parameterType="User">
         insert into user(userid,username,age) values(#{userid},#{username},#{age})
     </insert>
     <!-- mybsits_config中配置的alias类别名,也可直接配置resultType为类路劲 -->
     <select id="findById" parameterType="int" resultType="User">
         select userid,username,age from user where userid=#{userid}
+    </select>
+
+    <select id="findAll" resultMap="user_map">
+        select userid,username,age from user
     </select>
 
 

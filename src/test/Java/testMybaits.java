@@ -1,9 +1,13 @@
 import com.cjapp.dao.IUserDao;
+import com.cjapp.entity.User;
 import com.cjapp.service.IUserService;
+import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.test.context.TestExecutionListeners;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Created by cj on 2016/11/10.
@@ -16,13 +20,20 @@ public class testMybaits {
 
     public static void main(String[] args) {
         ApplicationContext ctx=null;
-       ctx=new ClassPathXmlApplicationContext("classpath:/spring-mybatis.xml");
+        ctx=new ClassPathXmlApplicationContext("classpath:/spring-mybatis.xml");
         IUserDao userDao = ctx.getBean(IUserDao.class);
-       /* String[] beanNamesForType = ctx.getBeanNamesForType(IUserDao.class);
-        for (int i = 0; i <beanNamesForType.length ; i++) {
-            System.out.println(beanNamesForType[i]);
-        }*/
-//        IUserDao userDao=(IUserDao) ctx.getBean("userServicerDao");
-        System.out.println(userDao);
+        List<User> all = userDao.findAll();
+        System.out.println(all);
+
     }
+    @Test
+    public void tuser(){
+        ApplicationContext ctx=null;
+        ctx=new ClassPathXmlApplicationContext("classpath:/spring-mybatis.xml");
+        IUserDao userDao = ctx.getBean(IUserDao.class);
+        List<User> all = userDao.findAll();
+        System.out.println(all);
+    }
+
+
 }

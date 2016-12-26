@@ -32,9 +32,13 @@ public class User {
         this.age = age;
     }
 
+    public User() {
+    }
+
     public User(String userid, String username, String age) {
         this.userid = userid;
         this.username = username;
         this.age = age;
     }
+
 }
