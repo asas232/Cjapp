@@ -23,7 +23,7 @@
   </listener>
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:spring-*.xml</param-value>
+    <param-value>classpath:spring-mybatis.xml</param-value>
   </context-param>
 
   <servlet>
@@ -37,7 +37,7 @@
       <!--2、<param-value>/WEB-INF/classes/dispatcher-servlet.xml</param-value>-->
       <!--3、<param-value>classpath*:dispatcher-servlet.xml</param-value>-->
       <!--4、多个值用逗号分隔-->
-      <param-value>classpath:spring-*.xml</param-value>
+      <param-value>classpath:spring-mvc.xml</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup><!--是启动顺序，让这个Servlet随Servletp容器一起启动。-->
   </servlet>
